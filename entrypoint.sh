@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "$SSH_KEY_PRIVATE" > ~/.ssh/id_ed25519 && \
+echo "$SSH_KEY_PRIVATE" > ~/.ssh/id_rsa && \
 chmod 600 /root/.ssh/id_rsa && \
-echo "$SSH_KEY_PUBLIC" > ~/.ssh/id_ed25519.pub && \
+echo "$SSH_KEY_PUBLIC" > ~/.ssh/id_rsa.pub && \
 python3 /app/main.py
