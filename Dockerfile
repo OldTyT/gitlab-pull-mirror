@@ -8,7 +8,8 @@ ENV GITLAB_GROUP="mirror" \
     GITLAB_API_URL="https://gitlab.com"
 
 RUN mkdir /root/.ssh/ && \
-    echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config && \
+    echo 'Host *' > /root/.ssh/config && \
+    echo '    StrictHostKeyChecking no' >> /root/.ssh/config && \
     pip install --no-cache -r requirements.txt && \
     apk add --no-cache openssh git
 
