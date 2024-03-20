@@ -23,8 +23,10 @@ gl = gitlab.Gitlab(GITLAB_API_URL, private_token=GITLAB_API_TOKEN)
 gl.groups.list(search=GITLAB_GROUP)
 
 group = gl.groups.list(search=GITLAB_GROUP)[0]
+groups = group.projects.list(all=True)
+print(f"Return {len(groups)} groups.")
 
-for project in group.projects.list(all=True):
+for project in groups:
     if project.description is None:
         print(f"Skip project {project.name} from pull mirroring.")
         continue
