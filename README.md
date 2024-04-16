@@ -1,12 +1,12 @@
 # gitlab-pull-mirror
 
-Docker container for automaticly pull mirror repos in projects for GitLab CE.
+Docker container designed to create a pipeline that automatically pulls mirror repositories into projects for GitLab CE.
 
 ## How to use
 
-1. Create a new project in the mirror group and specify the source git repository in the description.
-2. ....
-3. Profit!
+1. In the mirror group, create a new project and specify the source git repository's URL in its description.
+2. ...
+3. Enjoy the benefits!
 
 ## Prepare
 
@@ -30,6 +30,6 @@ mirror_repositories:
   script:
     - /app/entrypoint.sh
 ```
-3. Create CI/CD Variable `GITLAB_API_TOKEN` in [this page](https://gitlab.com/-/user_settings/personal_access_tokens)
-4. Create schedule for pipeline: `Build` -> `Pipeline schedules` -> `New schedule`
-5. Optional: Setup `SSH_KEY_PRIVATE` in CI/CD Variable
+3. Generate a CI/CD variable named `GITLAB_API_TOKEN `by visiting [this page](https://gitlab.com/-/user_settings/personal_access_tokens).
+4. Set up a pipeline schedule by navigating to: CI/CD -> Pipeline schedules -> New schedule.
+5. Optional: Add your `SSH_KEY_PRIVATE` as a CI/CD variable.
